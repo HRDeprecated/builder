@@ -14,7 +14,7 @@
         "less": "1.7.3",
         "q": "0.9.6",
         "commander": "2.2.0",
-        "happyrhino": "1.0.0"
+        "happyrhino": "1.0.1"
     },
     "engines": {
         "node": ">=0.8.0",

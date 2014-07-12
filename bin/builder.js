@@ -7,7 +7,7 @@ var prog = require('commander');
 var pkg = require('../package.json');
 
 var Builder = require('../lib/builder').Builder;
-var defaultConfig = require('../lib/defaults');
+var defaultConfig = require('../lib/default');
 
 prog
 .version(pkg.version);
@@ -19,11 +19,15 @@ prog.command('build [source_dir]')
     var config;
 
     folder = folder || process.cwd();
-    config = require(path.resolve(folder, this.config));
+    config = require(path.resolve(folder, this.config || 'build.js'));
 
-    var config = _.defaults(this.data, defaultConfig);
+    config = _.defaults(config, defaultConfig);
+    config.base = config.base || folder;
 
-    var builder = new Builder(config, console.log.bind(console));
+    var builder = new Builder(config, {
+        writeln: console.log.bind(console),
+        error: console.log.bind(console)
+    });
     builder.build()
     .fail(function() {
         process.exit(-1);
