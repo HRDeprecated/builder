@@ -1,0 +1,29 @@
+{
+    "author": "Samy Pesse",
+    "name": "hr-builder",
+    "description": "Client-side framework for structured applications.",
+    "version": "0.0.0",
+    "homepage": "https://github.com/HappyRhino/builder",
+    "bugs": "https://github.com/HappyRhino/builder/issues",
+    "dependencies": {
+        "express": "3.0.0",
+        "requirejs": "2.1.6",
+        "wrench": "1.5.1",
+        "cli-color": "0.2.2",
+        "lodash": "2.4.1",
+        "less": "1.7.3",
+        "q": "0.9.6",
+        "commander": "2.2.0"
+    },
+    "engines": {
+        "node": ">=0.8.0",
+        "npm": ">=1.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/HappyRhino/builder"
+    },
+    "bin": {
+        "hr-builder": "./bin/builder.js"
+    }
+}
